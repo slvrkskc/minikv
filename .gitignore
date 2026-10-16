@@ -19,3 +19,8 @@
 .idea/
 *.swp
 .DS_Store
+
+# derlenmiş dosyalar
+*.exe
+/bin/
+
