@@ -1,7 +1,7 @@
 # Derlenmiş çalıştırılabilir dosyalar.
 # Başta "/" olmazsa desen cmd/minikv/ klasörünü de yakalar.
 /minikv
-/minikv.exe
+*.exe
 /bin/
 
 # Test ve profil çıktıları
@@ -9,7 +9,7 @@
 *.out
 *.prof
 
-# Veritabanı dosyaları (Adım 2'de WAL burada oluşacak)
+# Veritabanı dosyaları (WAL burada oluşur)
 *.wal
 *.db
 /data/
@@ -19,8 +19,3 @@
 .idea/
 *.swp
 .DS_Store
-
-# derlenmiş dosyalar
-*.exe
-/bin/
-
