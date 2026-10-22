@@ -8,8 +8,8 @@ A small, Redis-like key-value database written from scratch in Go — built to l
 
 - [x] Thread-safe in-memory store
 - [x] Command-line interface (SET / GET / DEL)
-- [ ] Write-ahead log (WAL)
-- [ ] Crash recovery
+- [x] Write-ahead log — length-prefixed binary records, CRC32, fsync policies
+- [ ] Crash recovery — replay the log into the store on startup
 - [ ] Log compaction
 - [ ] TCP server
 - [ ] Benchmarks vs. SQLite

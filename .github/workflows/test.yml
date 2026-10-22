@@ -10,5 +10,19 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
+
+      - name: gofmt
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then
+            echo "Bu dosyalar gofmt'den geçmemiş:"
+            echo "$unformatted"
+            exit 1
+          fi
+
       - run: go vet ./...
-      - run: go test -race -v ./...
+
+      # Race detector'ı burada çalıştırmak ayrıca önemli: Windows'ta cgo/gcc
+      # olmadığı için yerelde -race çalışmıyor, bu yüzden yarış koşullarını
+      # yakalayan tek yer CI.
+      - run: go test -race -count=1 ./...

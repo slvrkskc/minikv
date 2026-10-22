@@ -1,0 +1,4 @@
+# Satır sonlarını platformdan bağımsız hale getiriyoruz.
+# Bu olmadan Windows'ta çalışan biri CRLF, Linux'ta çalışan biri LF üretir ve
+# diff'ler anlamsız şekilde şişer; gofmt de CRLF'li dosyayı biçimsiz sayar.
+* text=auto eol=lf
